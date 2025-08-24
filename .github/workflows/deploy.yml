@@ -3,13 +3,10 @@ name: Deploy Flutter Game to GitHub Pages
 on:
   push:
     branches: [main]
-  pull_request:
-    branches: [main]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
 
@@ -22,27 +19,21 @@ jobs:
         run: flutter pub get
 
       - name: Build web
-        run: flutter build web --release --base-href /<REPOSITORY_NAME>/
+        run: flutter build web --release --base-href /flutter_gamer_hub/
 
-      - name: Upload build artifacts
-        uses: actions/upload-pages-artifact@v1
+      - name: Upload web build
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./build/web
 
   deploy:
     needs: build
-    if: github.ref == 'refs/heads/main'
-
     permissions:
       pages: write
       id-token: write
-
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
