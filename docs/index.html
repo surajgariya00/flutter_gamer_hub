@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="description" content="Flutter Gamer Hub - Play your games, save progress locally with Hive." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Flutter Gamer Hub</title>
+
+    <!-- 👇 This is the important placeholder Flutter expects -->
+    <base href="/flutter_gamer_hub/">
+
+    <link rel="icon" type="image/png" href="icons/Icon-192.png" />
+    <style>
+      html, body {
+        background: #0b0f1a;
+        margin: 0;
+        height: 100%;
+        overflow: hidden;
+      }
+      /* Subtle animated grid background for gamer vibe */
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: radial-gradient(circle at 20% 30%, rgba(0,255,170,0.12), transparent 35%),
+                    radial-gradient(circle at 80% 70%, rgba(100,0,255,0.12), transparent 35%),
+                    linear-gradient(45deg, rgba(255,255,255,0.05) 1px, transparent 1px),
+                    linear-gradient(-45deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+        background-size: 100% 100%, 100% 100%, 24px 24px, 24px 24px;
+        pointer-events: none;
+        z-index: -1;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="flutter_bootstrap.js" async></script>
+  </body>
+</html>
