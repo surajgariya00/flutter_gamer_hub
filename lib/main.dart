@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gamer_hub/games/cyber_snake.dart';
 import 'package:flutter_gamer_hub/games/neon_breakout.dart';
+import 'package:flutter_gamer_hub/games/neon_candy_crush.dart';
 import 'package:flutter_gamer_hub/games/neon_raycaster.dart';
 import 'package:flutter_gamer_hub/games/neon_roguelike.dart';
 import 'package:flutter_gamer_hub/games/tron_lightcycles.dart';
@@ -51,6 +52,14 @@ class _HomeScreenState extends State<HomeScreen> {
       description: 'Classic duel. Local progress & scores saved.',
       icon: Icons.grid_3x3_rounded,
       build: (ctx) => const TicTacToeScreen(),
+    ),
+    GameDefinition(
+      id: 'candy',
+      name: 'Neon Candy Crush',
+      description:
+          'Match-3 with combos & cascades. Drag or click to swap. Hive saves.',
+      icon: Icons.casino_rounded,
+      build: (ctx) => const NeonCandyCrushScreen(),
     ),
     GameDefinition(
       id: 'memory',
